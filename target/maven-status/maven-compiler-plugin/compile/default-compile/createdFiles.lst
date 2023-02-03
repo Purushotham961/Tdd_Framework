@@ -1,0 +1,8 @@
+purushotham\pageobjects\OrdersPage.class
+purushotham\pageobjects\CartPage.class
+purushotham\pageobjects\ConfirmationPage.class
+purushotham\pageobjects\ProductCatalogue.class
+purushotham\resources\ExtentReportsNG.class
+purushotham\abstractcomponents\AbstractComponents.class
+purushotham\pageobjects\PaymentPage.class
+purushotham\pageobjects\LandingPage.class
