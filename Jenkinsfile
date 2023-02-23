@@ -1,32 +1,9 @@
-pipeline{
-	agent any
-	stages{
-	stage('Build')
-	{
-		steps {
-       git 'https://github.com/Purushotham961/Tdd_Framework.git'
-	echo "Building the code....."
-      }
+node{
+	stage('SCM Checkout'){
+		git 'https://github.com/Purushotham961/Tdd_Framework.git'
 	}
-	stage('Test')
-	{
-		steps{
-		echo "Testing the code....."
-	
-		}
-	}
-	stage('Compile')
-	{
-		steps{
-		echo "Compiling the project....."
-	
-		}
-	}
-	stage('Deploy')
-	{
-	steps{
-	echo "Deploying the project....."
-	}
-	}
+	stage('Compile-Package'){
+	def mvnHome = tool name: '', type: 'maven'
+	sh "${mvnHome}/bin/mvn package"
 	}
 }
