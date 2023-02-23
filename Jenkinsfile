@@ -6,7 +6,6 @@ pipeline{
 		steps {
        git 'https://github.com/Purushotham961/Tdd_Framework.git'
 	echo "Building the code....."
-	bat "mvn clean"
       }
 	}
 	stage('Test')
