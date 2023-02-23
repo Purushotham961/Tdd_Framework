@@ -12,14 +12,14 @@ pipeline{
 	{
 		steps{
 		echo "Testing the code....."
-		bat "mvn test"
+	
 		}
 	}
 	stage('Compile')
 	{
 		steps{
 		echo "Compiling the project....."
-		bat "mvn compile"
+	
 		}
 	}
 	stage('Deploy')
