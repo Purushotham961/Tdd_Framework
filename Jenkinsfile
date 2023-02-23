@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        git 'https://github.com/yourusername/yourrepository.git'
+        git 'https://github.com/Purushotham961/Tdd_Framework.git'
         sh 'mvn clean package'
       }
     }
     stage('Run') {
       steps {
-        sh 'java -jar target/yourproject.jar'
+        sh 'java -jar target/Tdd_Framework.jar'
       }
     }
   }
