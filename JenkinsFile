@@ -9,18 +9,18 @@ agent any
 				bat "mvn clean"
 			}
 		}
+		stage('Compile')
+		      {
+			      steps{
+				      echo "Compiling the project....."
+				      bat "mvn compile"
+			      }
+		      }
 		stage('Test')
 		      {
 			      steps{
 				      echo "Testing the code....."
 				      bat "mvn test"
-			      }
-		      }
-		      stage('Compile')
-		      {
-			      steps{
-				      echo "Compiling the project....."
-				      bat "mvn compile"
 			      }
 		      }
 	}
