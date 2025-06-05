@@ -34,6 +34,6 @@ public class Shopping extends BaseTest
 		ProductCatalogue productCatalogue = landingPage.loginToApplication(emailId, passwordId);
 		OrdersPage ordersPage = productCatalogue.clickOnOrdersHeader();
 		Boolean match = ordersPage.verigyTheOrderPlaced(productId);
-		Assert.assertTrue(false);
+        Assert.fail();
 	}
 }

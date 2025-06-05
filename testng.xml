@@ -4,7 +4,7 @@
   <listeners>
   	<listener class-name="purushotham.testcomponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Shopping Test">
+  <test thread-count="5" parallel="classes" name="Shopping Test">
     <classes>
       <class name="purushotham.tests.Shopping"/>
       <class name="purushotham.tests.HashMapTest"/>

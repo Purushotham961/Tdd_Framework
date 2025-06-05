@@ -15,7 +15,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import purushotham.pageobjects.LandingPage;
 
 public class BaseTest 
@@ -30,7 +29,7 @@ public class BaseTest
 	public LandingPage landingPage;
 	public WebDriver initializeTheDriver() throws Exception
 	{
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\purushotham\\resources\\GlobalData.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		browserName = prop.getProperty("browser");
@@ -41,17 +40,14 @@ public class BaseTest
 		
 		if(browserName.equalsIgnoreCase("edge"))
 		{
-			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("firefox"))
 		{
-			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
