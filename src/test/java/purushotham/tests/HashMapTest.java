@@ -27,6 +27,7 @@ public class HashMapTest extends BaseTest
 		paymentPage.selectTheCountry(input.get("country"));
 		ConfirmationPage confirmationPage = paymentPage.clickOnPlaceOrder();
 		confirmationPage.printConfirmationMessage();
+		System.out.println("Execution done");
 	}
 	
 	@DataProvider
