@@ -1,6 +1,8 @@
 package purushotham.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import purushotham.pageobjects.CartPage;
@@ -13,10 +15,13 @@ import purushotham.testcomponents.Retry;
 
 public class Shopping extends BaseTest
 {
+	@Parameters("userEmail")
 	@Test
-	public void clientApp() throws Exception
+	public void clientApp(
+			@Optional("purushotham@gmail.com") String userEmail
+	)
 	{
-		ProductCatalogue productCatalogue = landingPage.loginToApplication(emailId, passwordId);
+		ProductCatalogue productCatalogue = landingPage.loginToApplication(userEmail, passwordId);
 		productCatalogue.getProductByName(productId);
 		productCatalogue.clickOnAddToCart(productId);
 		CartPage cartPage = productCatalogue.clickOnCartHeader();
