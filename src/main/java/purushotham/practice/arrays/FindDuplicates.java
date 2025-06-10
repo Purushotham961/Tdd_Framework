@@ -10,8 +10,8 @@ public class FindDuplicates {
         String[] str = {"abc", "def", "abc", "uey"};
 
 
-        System.out.println(findDuplicates(arr));
-        System.out.println(findDuplicates(str));
+        findDuplicates(arr);
+        findDuplicates1(arr);
     }
 
     private static Set<Integer> findDuplicates(int[] arr) {
@@ -26,15 +26,17 @@ public class FindDuplicates {
         return duplicates;
     }
 
-    private static Set<String> findDuplicates(String[] arr) {
-        Set<String> seen = new HashSet<>();
-        Set<String> duplicates = new HashSet<>();
-        for (String s : arr) {
-            if (!seen.add(s)) {
-                duplicates.add(s);
+    private static void findDuplicates1(int[] arr) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> duplicates = new HashSet<>();
+
+        for (int num : arr) {
+            if (!seen.add(num)) {
+                duplicates.add(num);
             }
         }
-        System.out.println("Duplicates: " + duplicates);
-        return duplicates;
+
+        System.out.println(duplicates);
+
     }
 }

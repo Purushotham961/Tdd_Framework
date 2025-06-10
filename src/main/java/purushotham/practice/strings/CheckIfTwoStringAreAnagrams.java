@@ -1,4 +1,4 @@
-package purushotham.practice;
+package purushotham.practice.strings;
 
 import java.util.Arrays;
 

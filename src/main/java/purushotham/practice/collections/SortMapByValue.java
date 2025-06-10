@@ -18,6 +18,14 @@ public class SortMapByValue {
                 .sorted(Map.Entry.comparingByValue())
                 .forEach(System.out::println);
 
+        test(map);
 
+    }
+
+    private static void test(Map<String, Integer> map) {
+        map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(System.out::println);
     }
 }
